@@ -21,8 +21,8 @@ For multiple linear regression with \( n \) features:
 where:
 - \( Y \) is the target variable,
 - \( b_0 \) is the y-intercept,
-- \( w_1, w_2, \ldots, w_n \) are the coefficients,
-- \( X_1, X_2, \ldots, X_n \) are the predictor variables.
+- \( w_1, w_2, ....., w_n \) are the coefficients,
+- \( X_1, X_2, ....., X_n \) are the predictor variables.
 
 ## Cost Function: Mean Squared Error
 
