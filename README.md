@@ -50,6 +50,23 @@ where:
 
 This project implements linear regression from scratch in Python, including the calculation of the mean squared error, the use of gradient descent for optimization, and the visualization of the regression line.
 
+#### Training the Model:
+
+The `linear_regression` function is used to train the model on the provided data. It iteratively updates weights and bias using gradient descent until convergence or a specified number of iterations.
+
+#### Making Predictions:
+
+Once the model is trained, predictions are made using the learned parameters. In the example, the predicted values (\(Y_{\text{pred}}\)) are computed using the formula \(Y_{\text{pred}} = Xw + b\).
+
+#### Evaluation:
+
+The model's performance is evaluated using the Mean Squared Error (MSE), providing a quantitative measure of the prediction accuracy.
+
+#### Visualization:
+
+Matplotlib and Plotly are used for visualizing the data points and the regression line in both 2D and 3D plots.
+
+
 ## Usage
 
 To use the implementation, follow these steps:
