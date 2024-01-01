@@ -6,43 +6,79 @@ Linear Regression is a supervised learning algorithm widely used for predicting 
 
 The goal of linear regression is to find the linear relationship between the input features and the target variable. The equation of a simple linear regression model is given by:
 
-\[ Y = wX + b \]
+$$( Y = wX + b )$$
 
 where:
-- \( Y \) is the target variable,
-- \( X \) is the predictor variable,
-- \( w \) is the slope (coefficient) of the line,
-- \( b \) is the y-intercept.
+- $( Y )$ is the target variable,
+- $( X )$ is the predictor variable,
+- $( w )$ is the slope (coefficient) of the line,
+- $( b )$ is the y-intercept.
 
-For multiple linear regression with \( n \) features:
+For multiple linear regression with $n$ features:
 
-\[ Y = b_0 + w_1X_1 + w_2X_2 + \ldots + w_nX_n \]
+$[ Y = b_0 + w_1X_1 + w_2X_2 + \ldots + w_nX_n ]$
 
 where:
-- \( Y \) is the target variable,
-- \( b_0 \) is the y-intercept,
-- \( w_1, w_2, ....., w_n \) are the coefficients,
-- \( X_1, X_2, ....., X_n \) are the predictor variables.
+- $( Y )$ is the target variable,
+- $( b_0 )$ is the y-intercept,
+- $( w_1, w_2, \ldots, w_n )$ are the coefficients,
+- $( X_1, X_2, \ldots, X_n )$ are the predictor variables.
 
 ## Cost Function: Mean Squared Error
 
 The mean squared error (MSE) is a measure of the average squared difference between the actual and predicted values. It is a widely used cost function for linear regression. The formula for MSE is given by:
 
-\[ MSE = \frac{1}{m} \sum_{i=1}^{m} (y_i - \hat{y}_i)^2 \]
+$$[ MSE = \frac{1}{m} \sum_{i=1}^{m} (y_i - \hat{y}_i)^2 ]$$
 
 where:
-- \( m \) is the number of samples,
-- \( y_i \) is the actual target value for the \( i^{th} \) sample,
-- \( \hat{y}_i \) is the predicted target value for the \( i^{th} \) sample.
+- $( m )$ is the number of samples,
+- $( y_i )$ is the actual target value for the \( i^{th} \) sample,
+- $( \hat{y}_i )$ is the predicted target value for the \( i^{th} \) sample.
 
 ## Gradient Descent
 
 Gradient Descent is an optimization algorithm used to minimize the cost function (MSE in the case of linear regression). The gradient represents the direction of the steepest increase of the cost function, and moving in the opposite direction of the gradient reduces the cost. The update rules for the weights \( w \) and \( b \) in the context of gradient descent are given by:
 
-\[ w := w - \alpha \frac{\partial}{\partial w}MSE \]
+$[ w := w - \alpha \frac{\partial}{\partial w}MSE ]$
 
-\[ b := b - \alpha \frac{\partial}{\partial b}MSE \]
+$[ b := b - \alpha \frac{\partial}{\partial b}MSE ]$
 
 where:
-- \( \alpha \) is the learning rate.
+- $( \alpha )$ is the learning rate.
 
+## Implementation
+
+This project implements linear regression from scratch in Python, including the calculation of the mean squared error, the use of gradient descent for optimization, and the visualization of the regression line.
+
+## Usage
+
+To use the implementation, follow these steps:
+
+1. Import the necessary libraries (NumPy, Matplotlib, etc.).
+2. Load or generate your dataset.
+3. Use the `linear_regression` function to train the model on your data.
+4. Make predictions using the learned parameters.
+5. Evaluate the model using metrics such as mean squared error.
+
+Refer to the code and comments for detailed usage instructions.
+
+## Example
+
+Here's a brief example of how to use the linear regression implementation:
+
+```python
+import numpy as np
+from linear_regression import linear_regression, mean_squared_error
+
+# Load or generate your dataset (X, Y)
+
+# Train the model
+estimated_weights, estimated_bias = linear_regression(X, Y)
+
+# Make predictions
+predictions = np.dot(X, estimated_weights) + estimated_bias
+
+# Evaluate the model
+mse = mean_squared_error(Y, predictions)
+print(f"Mean Squared Error: {mse}")
+```
