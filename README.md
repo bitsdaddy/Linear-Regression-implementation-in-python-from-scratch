@@ -85,7 +85,6 @@ Here's a brief example of how to use the linear regression implementation:
 
 ```python
 import numpy as np
-from linear_regression import linear_regression, mean_squared_error
 
 # Load or generate your dataset (X, Y)
 
